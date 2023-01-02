@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: local
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:oracle:thin:@//119.205.217.251:1521/orcl
+    username: ill
+    password: ill
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    hibernate:
+      #      절대로 건들지 안됌!!!!
+      ddl-auto: none
+    properties:
+      hibernate:
+  #        show_sql: true
+  #        format_sql: true
+
+# p6spy 설정
+decorator.datasource.p6spy:
+  enable-logging: true
+  multiline: true
+  logging: slf4j
