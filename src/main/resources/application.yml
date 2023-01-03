@@ -1,3 +1,6 @@
+server:
+  port: 8083
+
 spring:
   profiles:
     active: local
@@ -17,7 +20,6 @@ spring:
       hibernate:
   #        show_sql: true
   #        format_sql: true
-
 # p6spy 설정
 decorator.datasource.p6spy:
   enable-logging: true
