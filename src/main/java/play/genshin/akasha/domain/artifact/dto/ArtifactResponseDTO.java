@@ -2,11 +2,9 @@ package play.genshin.akasha.domain.artifact.dto;
 
 import lombok.Data;
 import play.genshin.akasha.domain.artifact.entity.Artifact;
-import play.genshin.akasha.domain.artifact.entity.ArtifactID;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 public class ArtifactResponseDTO {

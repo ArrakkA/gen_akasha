@@ -9,6 +9,7 @@ import play.genshin.akasha.domain.standard.entity.EffectiveOption;
 import play.genshin.akasha.domain.standard.repository.EffectiveOptionRepository;
 
 import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -21,6 +22,8 @@ public class ArtefactServiceImpl implements ArtefactService{
     public List<Artifact> makeArtefactScore(String charName, String partyType) {
         List<Artifact> all = artifactRepository.findAll();
         List<EffectiveOption> effective = effectiveOptionRepository.findEffectiveOptionByCharNameAndPartyType(charName, partyType);
+
+
 
 
         return null;

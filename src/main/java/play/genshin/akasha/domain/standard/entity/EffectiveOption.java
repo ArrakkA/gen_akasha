@@ -29,5 +29,6 @@ public class EffectiveOption {
     private String elementChargeYn;
     private String criticalProbabilityYn;
     private String criticalDamageYn;
+    private String artifactPart;
 
 }
