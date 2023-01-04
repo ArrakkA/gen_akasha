@@ -18,17 +18,13 @@ public class EffectiveOption {
     private String partyType;
     @Id
     private String validMain;
+    private String artifactPart;
 
     private String attackYn;
-    private String attackPerYn;
     private String defenseYn;
-    private String defensePerYn;
     private String healthPointYn;
-    private String healthPointPerYn;
     private String elementMasteryYn;
     private String elementChargeYn;
-    private String criticalProbabilityYn;
     private String criticalDamageYn;
-    private String artifactPart;
 
 }

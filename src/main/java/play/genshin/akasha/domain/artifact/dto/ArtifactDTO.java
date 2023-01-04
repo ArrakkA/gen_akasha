@@ -3,6 +3,7 @@ package play.genshin.akasha.domain.artifact.dto;
 import lombok.Data;
 import play.genshin.akasha.domain.artifact.entity.Artifact;
 import play.genshin.akasha.domain.standard.entity.EffectiveOption;
+import play.genshin.akasha.globals.common.Common;
 
 @Data
 public class ArtifactDTO {
@@ -20,26 +21,37 @@ public class ArtifactDTO {
     private double elementCharge;
     private double criticalProbability;
     private double criticalDamage;
-    private double artifactScore;
+    private String artifactScore;
 
     public ArtifactDTO(Artifact artifact, EffectiveOption effectiveOption) {
         this.artifactCd = artifact.getArtifactCd();
         this.artifactPart = artifact.getArtifactPart();
         this.artifactNo = artifact.getArtifactNo();
         this.mainOption = artifact.getMainOption();
-        this.attack = (effectiveOption.getAttackYn().equals("1")) ? artifact.getAttack() : 0;
-        this.attackPer =  (effectiveOption.getAttackPerYn().equals("1")) ? artifact.getAttackPer() : 0;
-        this.defense =  (effectiveOption.getDefenseYn().equals("1")) ? artifact.getDefense() : 0;
-        this.defensePer =  (effectiveOption.getDefensePerYn().equals("1")) ? artifact.getDefensePer() : 0;
-        this.healthPoint = (effectiveOption.getHealthPointYn().equals("1")) ? artifact.getHealthPoint() : 0;
-        this.healthPointPer =(effectiveOption.getHealthPointPerYn().equals("1")) ? artifact.getHealthPointPer() : 0;
-        this.elementMastery = (effectiveOption.getElementMasteryYn().equals("1")) ? artifact.getElementMastery() : 0;
-        this.elementCharge = (effectiveOption.getElementChargeYn().equals("1")) ? artifact.getElementCharge() : 0;
-        this.criticalProbability = (effectiveOption.getCriticalProbabilityYn().equals("1")) ? artifact.getCriticalProbability() : 0;
-        this.criticalDamage = (effectiveOption.getCriticalDamageYn().equals("1")) ? artifact.getCriticalDamage() : 0;
+        this.attack = Common.useOption(effectiveOption.getAttackYn(), artifact.getAttack());
+        this.attackPer = Common.useOption(effectiveOption.getAttackYn(), artifact.getAttackPer());
+        this.defense =  Common.useOption(effectiveOption.getDefenseYn(), artifact.getDefense());
+        this.defensePer =  Common.useOption(effectiveOption.getDefenseYn(), artifact.getDefensePer());
+        this.healthPoint = Common.useOption(effectiveOption.getHealthPointYn(), artifact.getHealthPoint());
+        this.healthPointPer = Common.useOption(effectiveOption.getHealthPointYn(), artifact.getHealthPointPer());
+        this.elementMastery = Common.useOption(effectiveOption.getElementMasteryYn(), artifact.getElementMastery());
+        this.elementCharge = Common.useOption(effectiveOption.getElementChargeYn(), artifact.getElementCharge());
+        this.criticalProbability = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalProbability());
+        this.criticalDamage = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalDamage());
 
-        this.artifactScore = (attack/800) + (attackPer/5.8) + (defense/700) +(defensePer/7.3)
+        this.artifactScore =String.format("%.2f",(attack/800) + (attackPer/5.8) + (defense/700) +(defensePer/7.3)
                 + (healthPointPer/5.8) + (healthPoint/12000) + (elementMastery/24)
-                + (elementCharge/6.5) + (criticalProbability/3.9) + (criticalDamage/7.8);
+                + (elementCharge/6.5) + (criticalProbability/3.9) + (criticalDamage/7.8));
+
+
+
+
+
     }
+
+
+
+
+
+
 }
