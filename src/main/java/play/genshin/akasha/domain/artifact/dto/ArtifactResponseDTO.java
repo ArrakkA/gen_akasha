@@ -8,9 +8,9 @@ import java.util.List;
 
 @Data
 public class ArtifactResponseDTO {
-    private List<Artifact> flowers = new ArrayList<>();
-    private List<Artifact> feathers = new ArrayList<>();
-    private List<Artifact> hourglasses = new ArrayList<>();
-    private List<Artifact> holyGrails = new ArrayList<>();
-    private List<Artifact> hats = new ArrayList<>();
+    private List<ArtifactDTO> flowers = new ArrayList<>();
+    private List<ArtifactDTO> feathers = new ArrayList<>();
+    private List<ArtifactDTO> hourglasses = new ArrayList<>();
+    private List<ArtifactDTO> holyGrails = new ArrayList<>();
+    private List<ArtifactDTO> hats = new ArrayList<>();
 }

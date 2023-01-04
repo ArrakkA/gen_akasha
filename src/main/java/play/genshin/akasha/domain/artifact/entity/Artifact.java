@@ -1,10 +1,12 @@
 package play.genshin.akasha.domain.artifact.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import play.genshin.akasha.domain.artifact.dto.ArtifactRequestDTO;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,8 +28,6 @@ public class Artifact implements Persistable<ArtifactID> {
     private int artifactNo;
 
     private String mainOption;
-    private double mainValue;
-
     private double attack;
     private double attackPer;
     private double defense;
@@ -42,6 +42,26 @@ public class Artifact implements Persistable<ArtifactID> {
     private String useYn;
     @LastModifiedDate
     private LocalDateTime upDate;
+
+    @Builder
+    public Artifact(ArtifactRequestDTO requestDTO, int artifactNo) {
+        this.userName = requestDTO.getUserName();
+        this.artifactCd = requestDTO.getArtifactCd();
+        this.artifactPart = requestDTO.getArtifactPart();
+        this.artifactNo = artifactNo;
+        this.mainOption = requestDTO.getMainOption();
+        this.attack = requestDTO.getAttack();
+        this.attackPer = requestDTO.getAttackPer();
+        this.defense = requestDTO.getDefense();
+        this.defensePer = requestDTO.getDefensePer();
+        this.healthPoint = requestDTO.getHealthPoint();
+        this.healthPointPer = requestDTO.getHealthPointPer();
+        this.elementMastery = requestDTO.getElementMastery();
+        this.elementCharge = requestDTO.getElementCharge();
+        this.criticalProbability = requestDTO.getCriticalProbability();
+        this.criticalDamage = requestDTO.getCriticalDamage();
+        this.useYn = "0";
+    }
 
     @Override
     public ArtifactID getId() {
