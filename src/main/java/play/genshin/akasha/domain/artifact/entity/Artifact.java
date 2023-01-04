@@ -60,7 +60,7 @@ public class Artifact implements Persistable<ArtifactID> {
         this.elementCharge = requestDTO.getElementCharge();
         this.criticalProbability = requestDTO.getCriticalProbability();
         this.criticalDamage = requestDTO.getCriticalDamage();
-        this.useYn = "0";
+        this.useYn = "N";
     }
 
     @Override
