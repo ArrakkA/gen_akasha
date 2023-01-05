@@ -34,6 +34,9 @@ $(document).ready(function(){
             ,"criticalDamage" : criticalDamage
         };
 
+        console.log(params)
+
+
         $.ajax({
             type:'post'
             ,url:'/v1/artifact/register'
