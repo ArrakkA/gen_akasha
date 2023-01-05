@@ -7,7 +7,7 @@ public class Common {
         if(optionYn.equals("Y")){
             result = optionStatus;
         }else if(optionYn.equals("M")){
-            result = optionStatus/2;
+            result = optionStatus * 0.73;
         }else {
             result = 0;
         }

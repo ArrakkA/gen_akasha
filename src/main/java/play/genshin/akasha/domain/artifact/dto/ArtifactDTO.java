@@ -39,13 +39,9 @@ public class ArtifactDTO {
         this.criticalProbability = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalProbability());
         this.criticalDamage = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalDamage());
 
-        this.artifactScore =String.format("%.2f",(attack/800) + (attackPer/5.8) + (defense/700) +(defensePer/7.3)
-                + (healthPointPer/5.8) + (healthPoint/12000) + (elementMastery/24)
+        this.artifactScore =String.format("%.2f",(attack/46.4) + (attackPer/5.8) + (defense/51.1) +(defensePer/7.3)
+                + (healthPointPer/5.8) + (healthPoint/696) + (elementMastery/24)
                 + (elementCharge/6.5) + (criticalProbability/3.9) + (criticalDamage/7.8));
-
-
-
-
 
     }
 
