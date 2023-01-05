@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.standard.entity;
+package play.genshin.akasha.domain.character.standard.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -36,11 +36,11 @@ public class EffectiveOption {
         this.partyType = dto.getPartyType();
         this.validMain = dto.getValidMain();
         this.artifactPart = dto.getArtifactPart();
-        this.attackYn = dto.getPartyType();
-        this.defenseYn = dto.getDefenseYn();
-        this.healthPointYn = dto.getHealthPointYn();
-        this.elementMasteryYn = dto.getElementMasteryYn();
-        this.elementChargeYn = dto.getElementChargeYn();
-        this.criticalDamageYn = dto.getCriticalDamageYn();
+        this.attackYn = dto.getAttack();
+        this.defenseYn = dto.getDefense();
+        this.healthPointYn = dto.getHealthPoint();
+        this.elementMasteryYn = dto.getElementMastery();
+        this.elementChargeYn = dto.getElementCharge();
+        this.criticalDamageYn = dto.getCriticalDamage();
     }
 }

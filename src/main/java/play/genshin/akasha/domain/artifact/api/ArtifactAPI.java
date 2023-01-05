@@ -37,9 +37,11 @@ public class ArtifactAPI {
             @ApiParam(value = "캐릭터 이름")
             @RequestParam(value = "charName")String charName,
             @ApiParam(value = "파티 타입")
-            @RequestParam(value = "partyType")String partyType
+            @RequestParam(value = "partyType")String partyType,
+            @ApiParam(value = "유저 이름")
+            @RequestParam(value = "userName")String userName
     ){
-        List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType);
+        List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType, userName);
         ArtifactResponseDTO responseDTO = new ArtifactResponseDTO();
 
         responseDTO.getFlowers().addAll(effectiveArtifact.stream()

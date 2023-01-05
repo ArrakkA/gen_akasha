@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.standard.entity;
+package play.genshin.akasha.domain.character.standard.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

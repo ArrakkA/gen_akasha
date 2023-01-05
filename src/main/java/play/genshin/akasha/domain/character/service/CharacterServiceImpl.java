@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
-import play.genshin.akasha.domain.standard.entity.EffectiveOption;
-import play.genshin.akasha.domain.standard.repository.EffectiveOptionRepository;
+import play.genshin.akasha.domain.character.standard.entity.EffectiveOption;
+import play.genshin.akasha.domain.character.standard.repository.EffectiveOptionRepository;
 
 @Service
 @Transactional

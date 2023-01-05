@@ -6,7 +6,7 @@ import play.genshin.akasha.domain.artifact.dto.ArtifactRequestDTO;
 import java.util.List;
 
 public interface ArtefactService {
-    List<ArtifactDTO> makeArtefactScore(String charName, String partyType);
+    List<ArtifactDTO> makeArtefactScore(String charName, String partyType, String userName);
 
     void resisterArtefact(ArtifactRequestDTO dto);
 

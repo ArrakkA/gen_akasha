@@ -9,10 +9,10 @@ public class CharStandardRequestDTO {
     private String validMain;               //"고공" , "고체" , "공퍼", "체퍼", "방퍼" , "치유" ,"원마", "원충" ,"치확", "치피" , "물리피" "불원피", "물원피" , "바위원피", "바람원피", "번원피" , "얼원피" , "풀원피"
     private String artifactPart;            // "꽃" , "깃털" , "시계" , "성배" , "왕관"
 
-    private String attackYn;                //"Y" , "N"
-    private String defenseYn;
-    private String healthPointYn;
-    private String elementMasteryYn;
-    private String elementChargeYn;
-    private String criticalDamageYn;
+    private String attack;                  //"Y" , "N"
+    private String defense;
+    private String healthPoint;
+    private String elementMastery;
+    private String elementCharge;
+    private String criticalDamage;
 }

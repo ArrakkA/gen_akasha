@@ -6,10 +6,14 @@ import org.springframework.data.repository.query.Param;
 import play.genshin.akasha.domain.artifact.entity.Artifact;
 import play.genshin.akasha.domain.artifact.entity.ArtifactID;
 
+import java.util.List;
+
 public interface ArtifactRepository extends JpaRepository<Artifact, ArtifactID> {
-    @Query("select coalesce(a.artifactNo, 0) from Artifact a " +
-            "where a.artifactCd = :artifactCd " +
-            "  and a.userName = :userName ")
-    int findArtifactNo(@Param("artifactCd")int artifactCd, @Param("userName")String userName);
+    @Query("select coalesce(max(a.artifactNo), 0) from Artifact a " +
+            "where a.userName = :userName ")
+    int findArtifactNo(@Param("userName")String userName);
+
+    List<Artifact> findArtifactByUserName(String userName);
+
 
 }
