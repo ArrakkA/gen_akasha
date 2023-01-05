@@ -11,6 +11,16 @@ public class PageController {
         return "home";
     }
 
+    @GetMapping("/artifact/new")
+    public String newArtifact(){
+        return "newArtifact";
+    }
+
+    @GetMapping("/artifact/score")
+    public String artifactList(){
+        return "artifactList";
+    }
+
 
 
 
