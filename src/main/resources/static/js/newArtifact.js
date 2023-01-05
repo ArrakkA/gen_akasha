@@ -40,8 +40,10 @@ $(document).ready(function(){
             ,data:params
             ,dataType:'json'
             ,success:function(result){
+                console.log("성공");
             }
             ,error:function(){
+                console.log("실패")
             }
         });//ajax
 
