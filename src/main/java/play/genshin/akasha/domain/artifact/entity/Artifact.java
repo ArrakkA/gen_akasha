@@ -1,5 +1,6 @@
 package play.genshin.akasha.domain.artifact.entity;
 
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "artefact")
 @IdClass(ArtifactID.class)
 @Getter

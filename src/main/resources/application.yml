@@ -18,6 +18,16 @@ spring:
       ddl-auto: none
     properties:
       hibernate:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  freemarker:
+    cache: false
+  thymeleaf:
+    cache: false
+
   #        show_sql: true
   #        format_sql: true
 # p6spy 설정
@@ -25,7 +35,6 @@ decorator.datasource.p6spy:
   enable-logging: true
   multiline: true
   logging: slf4j
-
 
 
 

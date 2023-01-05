@@ -1,8 +1,8 @@
-package play.genshin.akasha.domain.standard.repository;
+package play.genshin.akasha.domain.character.standard.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import play.genshin.akasha.domain.standard.entity.EffectiveOption;
-import play.genshin.akasha.domain.standard.entity.EffectiveOptionID;
+import play.genshin.akasha.domain.character.standard.entity.EffectiveOption;
+import play.genshin.akasha.domain.character.standard.entity.EffectiveOptionID;
 
 import java.util.List;
 

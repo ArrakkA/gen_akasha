@@ -2,7 +2,7 @@ package play.genshin.akasha.domain.artifact.dto;
 
 import lombok.Data;
 import play.genshin.akasha.domain.artifact.entity.Artifact;
-import play.genshin.akasha.domain.standard.entity.EffectiveOption;
+import play.genshin.akasha.domain.character.standard.entity.EffectiveOption;
 import play.genshin.akasha.globals.common.Common;
 
 @Data
@@ -39,13 +39,9 @@ public class ArtifactDTO {
         this.criticalProbability = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalProbability());
         this.criticalDamage = Common.useOption(effectiveOption.getCriticalDamageYn(), artifact.getCriticalDamage());
 
-        this.artifactScore =String.format("%.2f",(attack/800) + (attackPer/5.8) + (defense/700) +(defensePer/7.3)
-                + (healthPointPer/5.8) + (healthPoint/12000) + (elementMastery/24)
+        this.artifactScore =String.format("%.3f",(attack/46.4) + (attackPer/5.8) + (defense/51.1) +(defensePer/7.3)
+                + (healthPointPer/5.8) + (healthPoint/696) + (elementMastery/23)
                 + (elementCharge/6.5) + (criticalProbability/3.9) + (criticalDamage/7.8));
-
-
-
-
 
     }
 

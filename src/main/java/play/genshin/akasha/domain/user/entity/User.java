@@ -1,5 +1,6 @@
 package play.genshin.akasha.domain.user.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "accessible_user")
 public class User {
     @Id

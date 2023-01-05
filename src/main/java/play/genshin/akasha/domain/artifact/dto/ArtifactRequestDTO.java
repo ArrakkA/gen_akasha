@@ -1,13 +1,17 @@
 package play.genshin.akasha.domain.artifact.dto;
 
 import lombok.Data;
+import org.jetbrains.annotations.NotNull;
 
 @Data
 public class ArtifactRequestDTO {
+    @NotNull
     private String userName;
+    @NotNull
     private int artifactCd;
+    @NotNull
     private String artifactPart;
-    private int artifactNo;
+    @NotNull
     private String mainOption;
     private double attack;
     private double attackPer;
