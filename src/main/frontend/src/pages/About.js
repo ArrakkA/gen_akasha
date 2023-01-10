@@ -1,7 +1,13 @@
 import React from "react";
 
 const About = () => {
-    return <h1> About 화면 입니다.</h1>
+    return (
+        <div>
+        <h1> 성유물 등록 화면</h1>
+        <input></input>
+        <select></select>
+    </div>
+    )
 }
 
 export default About;
