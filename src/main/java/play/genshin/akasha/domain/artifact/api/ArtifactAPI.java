@@ -26,6 +26,7 @@ public class ArtifactAPI {
     public ResponseEntity artifactRegister(
             @RequestBody ArtifactRequestDTO requestDTO
             ){
+
         artefactService.resisterArtefact(requestDTO);
 
         return ResponseEntity.ok().build();

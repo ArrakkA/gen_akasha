@@ -1,9 +1,12 @@
 package play.genshin.akasha.domain.artifact.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
 @Data
+@NoArgsConstructor
 public class ArtifactRequestDTO {
     @NotNull
     private String userName;
@@ -23,4 +26,8 @@ public class ArtifactRequestDTO {
     private double elementCharge;
     private double criticalProbability;
     private double criticalDamage;
+
+
+    
+
 }
