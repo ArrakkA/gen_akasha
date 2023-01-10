@@ -16,9 +16,8 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(500, "C006", "Server Error"),
     VERSION_NOT_FOUND(400, "C007", "버전 정보가 없습니다."),
 
-    //login
-    NOT_OPEN(400, "L001", "오픈 전 입니다."),
-    POS_ALREADY_CLOSE(400, "L002", "포스 사용 불가 시간입니다.");
+    //user
+    USER_NOT_FOUND(400, "U001", "없는 유저입니다.");
 
     private int status;
     private String code;

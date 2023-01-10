@@ -1,7 +1,8 @@
 import React from "react";
+import Select from "react-dropdown-select";
 
 const Home = () => {
-    return <h1> Home 화면 입니다.</h1>
+    return <div>리스트 칸입니다.</div>
 }
 
 export default Home;
