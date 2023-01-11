@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gen shin akasha</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <label for ="char_name">캐릭터 이름 </label>
+                <select id ="char_name">
+                    <option disabled selected>성유물 이름</option>
+                </select>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label for ="party_type">파티 타입</label>
+                <select id ="party_type">
+                    <option disabled selected>성유물 부위</option>
+                </select>
+            </li>
+        </ul>
+        <button id="searchBtn" > 검색</button>
+    </div>
+
+
+    <div class="container">
+        <div class="tabList">
+            <a class="tab" id="flower"> 꽃 </a>
+            <a class="tab" id="feather"> 깃털 </a>
+            <a class="tab" id="hourglass"> 시계 </a>
+            <a class="tab" id="holyGrail"> 성배</a>
+            <a class="tab" id="crown"> 왕관 </a>
+        </div>
+    </div>
+
+</body>
+</html>
