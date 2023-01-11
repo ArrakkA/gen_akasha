@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.service.CharacterService;
-import play.genshin.akasha.domain.character.standard.dto.EffectiveResponseDTO;
+import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
 
 import java.util.List;
 
@@ -21,12 +21,11 @@ public class CharacterAPI {
 
     private final CharacterService characterService;
     @ApiOperation(value = "캐릭터 유효옵션 등록")
-    @PostMapping("v1/character/standard")
+    @PostMapping("v1/character/effective")
     public ResponseEntity standardChar(
             @RequestBody CharStandardRequestDTO dto
             ){
         characterService.standardSave(dto);
-
         return ResponseEntity.ok().build();
     }
 
@@ -35,12 +34,7 @@ public class CharacterAPI {
     public ResponseEntity partyOfChar(){
 
         List<EffectiveResponseDTO> charPartyName = characterService.charPartyName();
-
         return ResponseEntity.ok().body(charPartyName);
     }
-
-
-
-
 
 }

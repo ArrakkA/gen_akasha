@@ -1,7 +1,6 @@
-package play.genshin.akasha.domain.character.standard.dto;
+package play.genshin.akasha.domain.character.dto;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;

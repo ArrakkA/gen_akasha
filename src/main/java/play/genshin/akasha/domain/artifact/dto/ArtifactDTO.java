@@ -2,7 +2,7 @@ package play.genshin.akasha.domain.artifact.dto;
 
 import lombok.Data;
 import play.genshin.akasha.domain.artifact.entity.Artifact;
-import play.genshin.akasha.domain.character.standard.entity.EffectiveOption;
+import play.genshin.akasha.domain.character.entity.EffectiveOption;
 import play.genshin.akasha.globals.common.Common;
 
 @Data

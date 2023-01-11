@@ -27,7 +27,4 @@ public class ArtifactRequestDTO {
     private double criticalProbability;
     private double criticalDamage;
 
-
-    
-
 }

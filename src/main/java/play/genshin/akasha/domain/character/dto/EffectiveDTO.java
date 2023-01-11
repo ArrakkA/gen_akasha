@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.standard.dto;
+package play.genshin.akasha.domain.character.dto;
 
 public interface EffectiveDTO {
     String getCharName();

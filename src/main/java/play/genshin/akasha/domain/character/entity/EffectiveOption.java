@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.standard.entity;
+package play.genshin.akasha.domain.character.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;

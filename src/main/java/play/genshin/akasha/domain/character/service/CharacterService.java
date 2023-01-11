@@ -2,8 +2,7 @@ package play.genshin.akasha.domain.character.service;
 
 
 import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
-import play.genshin.akasha.domain.character.standard.dto.EffectiveDTO;
-import play.genshin.akasha.domain.character.standard.dto.EffectiveResponseDTO;
+import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
 
 import java.util.List;
 
