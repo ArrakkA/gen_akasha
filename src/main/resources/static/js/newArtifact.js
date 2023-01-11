@@ -36,8 +36,6 @@ $(document).ready(function(){
             ,"criticalDamage" : criticalDamage
         });
 
-        console.log(params);
-
         $.ajax({
             type:'post'
             ,url:'/v1/artifact/register'
@@ -52,8 +50,11 @@ $(document).ready(function(){
                 console.log(xhr);
                 console.log(error);
                 console.log(msg);
+                if(error === 'error'){
+                    alert('없는 유저입니다.')
+                }
             }
-        });//ajax
+        });
     })
 
 
