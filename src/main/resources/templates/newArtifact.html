@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gen shin akasha</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/css/bootstrap.css">
-    <link href="/js/newArtifact.js">
+    <script src="/js/optionMake.js"></script>
+    <script src="/js/newArtifact.js"></script>
 </head>
 <body>
 <div class="container">
@@ -15,94 +19,97 @@
     <div className="form-group">
         <ul>
             <li>
-                <label for ="userName">유저 이름</label>
-                <input type ="text" id="userName" name="userName" placeholder="유저 이름을 입력하세요"/>
+                <label for ="user_name">유저 이름</label>
+                <input type ="text" id="user_name" placeholder="유저 이름을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="artifact_name">성유물 이름 </label>
-                <select id ="artifact_name"></select>
-                <option disabled selected>성유물 이름</option>
+                <select id ="artifact_name">
+                    <option disabled selected>성유물 이름</option>
+                </select>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="artifact_part">성유물 부위 </label>
-                <select id ="artifact_part"></select>
-                <option disabled selected>성유물 부위</option>
+                <select id ="artifact_part">
+                    <option disabled selected>성유물 부위</option>
+                </select>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="main_option">메인 옵션</label>
-                <select id ="main_option"></select>
-                <option disabled selected>메인 옵션</option>
+                <select id ="main_option">
+                    <option disabled selected>메인 옵션</option>
+                </select>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="attack">공격력</label>
-                <input type="number" id="attack" name="attack" placeholder="공격력을 입력하세요"/>
+                <input type="number" id="attack" placeholder="공격력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="attack_percent">공격력 퍼센트</label>
-                <input type="number" id="attack_percent" name="attackPer" placeholder="공격력 퍼센트를 입력하세요"/>
+                <input type="number" id="attack_percent" placeholder="공격력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="defense">방어력</label>
-                <input type="number" id="defense" name="defense" placeholder="방어력을 입력하세요"/>
+                <input type="number" id="defense" placeholder="방어력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="defense_percent">방어력 퍼센트</label>
-                <input type="number" id="defense_percent" step={0.01} name="defensePer" placeholder="방어력 퍼센트를 입력하세요"/>
+                <input type="number" id="defense_percent"  placeholder="방어력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="health_point">체력</label>
-                <input type="number" id="health_point" name="healthPoint" placeholder="체력을 입력하세요"/>
+                <input type="number" id="health_point" placeholder="체력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="health_point_percent">체력 퍼센트</label>
-                <input type="number" id="health_point_percent" name="healthPointPer" placeholder="체력 퍼센트를 입력하세요"/>
+                <input type="number" id="health_point_percent" placeholder="체력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="element_mastery">원소 마스터리</label>
-                <input type="number" id="element_mastery" name="elementMastery" placeholder="원소 마스터리를 입력하세요"/>
+                <input type="number" id="element_mastery" placeholder="원소 마스터리를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="element_charge">원소 충전 효율</label>
-                <input type="number" id="element_charge" name="elementCharge" placeholder="원소 충전 효율을 입력하세요"/>
+                <input type="number" id="element_charge" placeholder="원소 충전 효율을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="critical_probability">치명타 확률</label>
-                <input type="number" id="critical_probability" name="criticalProbability" placeholder="치명타 확률을 입력하세요"/>
+                <input type="number" id="critical_probability" placeholder="치명타 확률을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
                 <label for ="critical_damage"> 치명타 데미지</label>
-                <input type="number" id="critical_damage" name="criticalDamage" placeholder="치명타 피해를 입력하세요"/>
+                <input type="number" id="critical_damage" placeholder="치명타 피해를 입력하세요"/>
             </li>
         </ul>
     </div>
     <div class="btn">
-        <button id="saveButton" type="submit">등록</button>
+        <button id="saveButton">등록</button>
     </div>
 </div>
 </body>
