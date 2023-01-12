@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="UTF-8">
 <head>
     <meta charset="UTF-8">
     <title>Gen shin akasha</title>
@@ -10,14 +10,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/css/bootstrap.css">
+    <script src="/js/artifactList.js"></script>
 </head>
 <body>
     <div class="container">
         <ul>
             <li>
+                <label for ="user_name">유저 이름</label>
+                <input type ="text" id="user_name" placeholder="유저 이름을 입력하세요"/>
+            </li>
+        </ul>
+        <ul>
+            <li>
                 <label for ="char_name">캐릭터 이름 </label>
                 <select id ="char_name">
-                    <option disabled selected>성유물 이름</option>
+                    <option disabled selected>캐릭터 이름</option>
+                    <option th:each ="val : ${ char }"
+                            th:value="${val.charName}"
+                            th:utext="${val.charName}"
+                    ></option>
                 </select>
             </li>
         </ul>
@@ -25,14 +36,22 @@
             <li>
                 <label for ="party_type">파티 타입</label>
                 <select id ="party_type">
-                    <option disabled selected>성유물 부위</option>
+                    <option disabled selected>파티 타입</option>
+                </select>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <label for ="weapon">무기</label>
+                <select id ="weapon">
+                    <option disabled selected>무기</option>
                 </select>
             </li>
         </ul>
         <button id="searchBtn" > 검색</button>
     </div>
     <div>
-        <img src="/enbi.png"/>
+        <img src="/enbi.png" alt="캐릭터 이미지"/>
         <div> 추천 성유물</div>
         <div> 성유물 점수</div>
     </div>
@@ -43,7 +62,7 @@
     </div>
     <div>
         <div>최소 스펙</div>
-        <div id-="lowest_attack"></div>
+        <div id ="lowest_attack"></div>
     </div>
 
 

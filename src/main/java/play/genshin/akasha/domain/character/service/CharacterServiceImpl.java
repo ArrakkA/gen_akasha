@@ -31,7 +31,6 @@ public class CharacterServiceImpl implements CharacterService{
     public List<EffectiveResponseDTO> charPartyName() {
 
         List<EffectiveDTO> charOption = effectiveOptionRepository.findCharOption();
-
         return charOption.stream().map(EffectiveResponseDTO::new).collect(Collectors.toList());
     }
 

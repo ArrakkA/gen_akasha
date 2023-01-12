@@ -12,6 +12,7 @@ import play.genshin.akasha.domain.character.entity.EffectiveOption;
 import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
 import play.genshin.akasha.domain.user.entity.User;
 import play.genshin.akasha.domain.user.repository.UserRepository;
+import play.genshin.akasha.globals.common.Globals;
 
 import java.util.Comparator;
 import java.util.List;
@@ -30,7 +31,10 @@ public class ArtefactServiceImpl implements ArtefactService{
     @Override
     public List<ArtifactDTO> makeArtefactScore(String charName, String partyType, String userName) {
         List<Artifact> all = artifactRepository.findArtifactByUserName(userName);
-        List<EffectiveOption> effective = effectiveOptionRepository.findEffectiveOptionByCharNameAndPartyType(charName, partyType);
+
+        List<EffectiveOption> effective = Globals.effectiveOptions.stream()
+                .filter(effectiveOption -> effectiveOption.getCharName().equals(charName) && effectiveOption.getPartyType().equals(partyType))
+                .collect(Collectors.toList());
 
         return all.stream()
                 .filter(artifact -> effective.stream().anyMatch(effectiveOption -> effectiveOption.getArtifactPart().equals(artifact.getArtifactPart()) && effectiveOption.getValidMain().equals(artifact.getMainOption())))

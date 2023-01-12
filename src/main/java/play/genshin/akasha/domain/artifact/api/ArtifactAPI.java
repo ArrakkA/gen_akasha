@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import play.genshin.akasha.domain.artifact.dto.ArtifactDTO;
 import play.genshin.akasha.domain.artifact.dto.ArtifactRequestDTO;
@@ -43,7 +44,8 @@ public class ArtifactAPI {
             @ApiParam(value = "파티 타입")
             @RequestParam(value = "partyType")String partyType,
             @ApiParam(value = "유저 이름")
-            @RequestParam(value = "userName")String userName
+            @RequestParam(value = "userName")String userName,
+            Model model
     ){
         List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType, userName);
         ArtifactResponseDTO responseDTO = new ArtifactResponseDTO();
@@ -68,7 +70,8 @@ public class ArtifactAPI {
                 .filter(e -> e.getArtifactPart().equals("왕관"))
                 .collect(Collectors.toList()));
 
-        return ResponseEntity.ok().body(responseDTO);
+        model.addAttribute("artifact", responseDTO);
+        return ResponseEntity.ok().build();
     }
 
 
