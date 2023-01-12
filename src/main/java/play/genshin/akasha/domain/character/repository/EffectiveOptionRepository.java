@@ -10,8 +10,6 @@ import java.util.List;
 
 public interface EffectiveOptionRepository extends JpaRepository<EffectiveOption, EffectiveOptionID> {
 
-    List<EffectiveOption> findEffectiveOptionByCharNameAndPartyType(String charName, String partyType);
-
-    @Query("select a.charName, a.partyType from EffectiveOption a")
+    @Query("select a.charName as charName, a.partyType as partyType from EffectiveOption a")
     List<EffectiveDTO> findCharOption();
 }

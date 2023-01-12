@@ -8,11 +8,15 @@ import java.util.List;
 @Data
 public class EffectiveResponseDTO {
     private String charName;
-    private List<String> partyType = new ArrayList<>();
+    private List<String> partyTypes = new ArrayList<>();
 
-    public EffectiveResponseDTO(EffectiveDTO dto){
-        charName = dto.getCharName();
-        partyType.add(dto.getPartyType());
+    public EffectiveResponseDTO(String charName , List<String> partyTypes){
+        this.charName = charName;
+        this.partyTypes = partyTypes;
     }
+
+
+
+
 
 }

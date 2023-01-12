@@ -9,6 +9,7 @@ import java.util.List;
 public class Globals {
 
    public static List<LowestCharacter> characterSpec = new ArrayList<>();
+
    public static List<EffectiveOption> effectiveOptions = new ArrayList<>();
 
 

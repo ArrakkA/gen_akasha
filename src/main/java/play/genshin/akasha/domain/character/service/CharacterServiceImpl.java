@@ -3,14 +3,15 @@ package play.genshin.akasha.domain.character.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.dto.EffectiveDTO;
 import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
+import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.entity.EffectiveOption;
 import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 @Service
 @Transactional
@@ -18,7 +19,6 @@ import java.util.stream.Collectors;
 public class CharacterServiceImpl implements CharacterService{
 
     private final EffectiveOptionRepository effectiveOptionRepository;
-
 
     @Override
     public void standardSave(CharStandardRequestDTO dto) {
@@ -31,8 +31,19 @@ public class CharacterServiceImpl implements CharacterService{
     public List<EffectiveResponseDTO> charPartyName() {
 
         List<EffectiveDTO> charOption = effectiveOptionRepository.findCharOption();
-        return charOption.stream().map(EffectiveResponseDTO::new).collect(Collectors.toList());
+
+        return charOption.stream()
+                .collect(groupingBy(EffectiveDTO::getCharName,
+                        mapping(EffectiveDTO::getPartyType, toList())))
+                .entrySet().stream()
+                .map(e -> new EffectiveResponseDTO(e.getKey(),e.getValue().stream().distinct().collect(toList())))
+                .collect(toList());
+
     }
+
+
+
+
 
 
 }
