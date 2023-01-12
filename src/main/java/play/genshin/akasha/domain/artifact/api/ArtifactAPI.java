@@ -12,6 +12,7 @@ import play.genshin.akasha.domain.artifact.dto.ArtifactRequestDTO;
 import play.genshin.akasha.domain.artifact.dto.ArtifactResponseDTO;
 import play.genshin.akasha.domain.artifact.service.ArtefactService;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 

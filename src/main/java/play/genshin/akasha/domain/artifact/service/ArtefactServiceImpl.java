@@ -13,6 +13,7 @@ import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository
 import play.genshin.akasha.domain.user.entity.User;
 import play.genshin.akasha.domain.user.repository.UserRepository;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,6 +35,9 @@ public class ArtefactServiceImpl implements ArtefactService{
         return all.stream()
                 .filter(artifact -> effective.stream().anyMatch(effectiveOption -> effectiveOption.getArtifactPart().equals(artifact.getArtifactPart()) && effectiveOption.getValidMain().equals(artifact.getMainOption())))
                 .map(artifact -> new ArtifactDTO(artifact, effective.get(0)))
+                .collect(Collectors.toList())
+                .stream()
+                .sorted(Comparator.comparing(ArtifactDTO::getArtifactScore).reversed())
                 .collect(Collectors.toList());
     }
 

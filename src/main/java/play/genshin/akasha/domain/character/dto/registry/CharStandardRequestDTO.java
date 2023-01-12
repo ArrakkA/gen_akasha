@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.dto;
+package play.genshin.akasha.domain.character.dto.registry;
 
 import lombok.Data;
 

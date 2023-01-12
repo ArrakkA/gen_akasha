@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
+import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.service.CharacterService;
 import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
 
@@ -34,6 +34,7 @@ public class CharacterAPI {
     public ResponseEntity partyOfChar(){
 
         List<EffectiveResponseDTO> charPartyName = characterService.charPartyName();
+
         return ResponseEntity.ok().body(charPartyName);
     }
 

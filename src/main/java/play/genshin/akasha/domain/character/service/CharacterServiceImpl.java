@@ -3,7 +3,7 @@ package play.genshin.akasha.domain.character.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
+import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.dto.EffectiveDTO;
 import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
 import play.genshin.akasha.domain.character.entity.EffectiveOption;
