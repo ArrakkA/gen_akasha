@@ -7,7 +7,6 @@ import java.util.List;
 
 @Data
 public class EffectiveResponseDTO {
-
     private String charName;
     private List<String> partyType = new ArrayList<>();
 
@@ -15,8 +14,5 @@ public class EffectiveResponseDTO {
         charName = dto.getCharName();
         partyType.add(dto.getPartyType());
     }
-
-
-
 
 }

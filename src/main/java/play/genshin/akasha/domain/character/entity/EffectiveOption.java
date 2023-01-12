@@ -3,7 +3,7 @@ package play.genshin.akasha.domain.character.entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import play.genshin.akasha.domain.character.dto.CharStandardRequestDTO;
+import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
