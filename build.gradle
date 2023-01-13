@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.7'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
 
@@ -28,6 +29,7 @@ dependencies {
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	implementation group: 'com.oracle.ojdbc', name: 'orai18n', version: '19.3.0.0'
+	implementation "com.querydsl:querydsl-jpa:5.0.0"
 	implementation 'org.json:json:20220924'
 	implementation 'org.jetbrains:annotations:23.1.0'
 	compileOnly 'org.projectlombok:lombok'
@@ -48,4 +50,19 @@ sourceSets {
 		resources { srcDirs = ["$projectDir/src/main/resources"]
 		}
 	}
+}
+
+def querydslDir = "$buildDir/generated/querydsl"
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+sourceSets {
+	main.java.srcDir querydslDir
+}
+configurations {
+	querydsl.extendsFrom compileClasspath
+}
+compileQuerydsl {
+	options.annotationProcessorPath = configurations.querydsl
 }
