@@ -5,6 +5,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import play.genshin.akasha.domain.character.dto.EffectiveRequestDTO;
 import play.genshin.akasha.domain.character.dto.PracticeDTO;
+import play.genshin.akasha.domain.character.dto.QPracticeDTO;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -24,7 +25,7 @@ public class EffectiveOptionRepositoryImpl implements EffectiveRepositoryCustom{
 
     private List<PracticeDTO> searchOption(EffectiveRequestDTO dto){
         return queryFactory
-                .select(Projections.bean(PracticeDTO.class,
+                .select(new QPracticeDTO(
                         effectiveOption.charName,
                         effectiveOption.partyType))
                 .from(effectiveOption)

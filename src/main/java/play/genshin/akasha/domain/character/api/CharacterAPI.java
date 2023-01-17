@@ -41,11 +41,13 @@ public class CharacterAPI {
     }
 
     @ApiOperation(value = "성유물 누가씀?")
-    @GetMapping("v1/character/use")
+    @PostMapping("v1/character/use")
     public ResponseEntity whoUseThis(
             @RequestBody EffectiveRequestDTO dto
             ){
+
         List<PracticeDTO> practiceDTOS = characterService.whoUseThis(dto);
+
         return  ResponseEntity.ok().body(practiceDTOS);
     }
 
