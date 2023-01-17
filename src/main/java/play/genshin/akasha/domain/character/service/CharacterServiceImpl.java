@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import play.genshin.akasha.domain.character.dto.EffectiveDTO;
+import play.genshin.akasha.domain.character.dto.EffectiveRequestDTO;
 import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
+import play.genshin.akasha.domain.character.dto.PracticeDTO;
 import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.entity.EffectiveOption;
 import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
@@ -40,9 +42,10 @@ public class CharacterServiceImpl implements CharacterService{
 
     }
 
-
-
-
+    @Override
+    public List<PracticeDTO> whoUseThis(EffectiveRequestDTO dto) {
+        return effectiveOptionRepository.search(dto);
+    }
 
 
 }

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import play.genshin.akasha.domain.character.dto.EffectiveRequestDTO;
+import play.genshin.akasha.domain.character.dto.PracticeDTO;
 import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.service.CharacterService;
 import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
@@ -37,5 +39,15 @@ public class CharacterAPI {
 
         return ResponseEntity.ok().body(charPartyName);
     }
+
+    @ApiOperation(value = "성유물 누가씀?")
+    @GetMapping("v1/character/use")
+    public ResponseEntity whoUseThis(
+            @RequestBody EffectiveRequestDTO dto
+            ){
+        List<PracticeDTO> practiceDTOS = characterService.whoUseThis(dto);
+        return  ResponseEntity.ok().body(practiceDTOS);
+    }
+
 
 }

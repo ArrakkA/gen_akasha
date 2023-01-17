@@ -8,8 +8,8 @@ import play.genshin.akasha.domain.character.entity.EffectiveOptionID;
 
 import java.util.List;
 
-public interface EffectiveOptionRepository extends JpaRepository<EffectiveOption, EffectiveOptionID> {
-
+public interface EffectiveOptionRepository extends JpaRepository<EffectiveOption, EffectiveOptionID>, EffectiveRepositoryCustom {
     @Query("select a.charName as charName, a.partyType as partyType from EffectiveOption a")
     List<EffectiveDTO> findCharOption();
+
 }
