@@ -8,7 +8,7 @@ import play.genshin.akasha.domain.artifact.entity.ArtifactID;
 
 import java.util.List;
 
-public interface ArtifactRepository extends JpaRepository<Artifact, ArtifactID> {
+public interface ArtifactRepository extends JpaRepository<Artifact, ArtifactID> , ArtifactRepositoryCustom {
     @Query("select coalesce(max(a.artifactNo), 0) from Artifact a " +
             "where a.userName = :userName ")
     int findArtifactNo(@Param("userName")String userName);

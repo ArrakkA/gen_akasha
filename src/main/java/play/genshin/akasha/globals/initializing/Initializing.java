@@ -2,12 +2,11 @@ package play.genshin.akasha.globals.initializing;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
-import play.genshin.akasha.domain.character.repository.LowestCharRepository;
+import play.genshin.akasha.repository.EffectiveOptionRepository;
+import play.genshin.akasha.repository.LowestCharRepository;
 import play.genshin.akasha.globals.common.Globals;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor

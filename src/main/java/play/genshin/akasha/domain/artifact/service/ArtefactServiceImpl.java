@@ -9,7 +9,7 @@ import play.genshin.akasha.domain.artifact.entity.Artifact;
 import play.genshin.akasha.domain.artifact.exception.UserNotFoundException;
 import play.genshin.akasha.domain.artifact.repository.ArtifactRepository;
 import play.genshin.akasha.domain.character.entity.EffectiveOption;
-import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
+import play.genshin.akasha.repository.EffectiveOptionRepository;
 import play.genshin.akasha.domain.user.entity.User;
 import play.genshin.akasha.domain.user.repository.UserRepository;
 import play.genshin.akasha.globals.common.Globals;

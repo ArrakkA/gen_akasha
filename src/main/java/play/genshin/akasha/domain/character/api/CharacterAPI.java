@@ -26,7 +26,6 @@ public class CharacterAPI {
             @RequestBody CharStandardRequestDTO dto
             ){
         characterService.standardSave(dto);
-
         return ResponseEntity.ok().build();
     }
 
