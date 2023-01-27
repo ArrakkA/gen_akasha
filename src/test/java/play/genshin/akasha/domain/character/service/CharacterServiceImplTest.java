@@ -1,6 +1,5 @@
 package play.genshin.akasha.domain.character.service;
 
-import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -8,18 +7,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import play.genshin.akasha.domain.artifact.entity.Artifact;
 import play.genshin.akasha.domain.character.dto.PracticeDTO;
-import play.genshin.akasha.domain.character.entity.EffectiveOption;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Objects;
 
-import static play.genshin.akasha.domain.character.entity.QEffectiveOption.*;
-import static play.genshin.akasha.domain.artifact.entity.QArtifact.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static play.genshin.akasha.domain.character.entity.QEffectiveOption.effectiveOption;
 
 
 @SpringBootTest
