@@ -25,10 +25,6 @@
                 <label for ="char_name">캐릭터 이름 </label>
                 <select id ="char_name">
                     <option disabled selected>캐릭터 이름</option>
-                    <option th:each ="val : ${ char }"
-                            th:value="${val.charName}"
-                            th:utext="${val.charName}"
-                    ></option>
                 </select>
             </li>
         </ul>
@@ -51,7 +47,7 @@
         <button id="searchBtn" > 검색</button>
     </div>
     <div>
-        <img src="/enbi.png" alt="캐릭터 이미지"/>
+        <img/>
         <div> 추천 성유물</div>
         <div> 성유물 점수</div>
     </div>

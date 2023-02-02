@@ -22,12 +22,12 @@ public class PageController {
         return "home";
     }
 
-    @GetMapping(value = "/newArtifact")
+    @GetMapping(value = "/new_artifact")
     public String newArtifact(){
         return "newArtifact";
     }
 
-    @GetMapping(value = "/artifactList")
+    @GetMapping(value = "/artifact_list")
     public String artifactList(Model model){
 
         List<SpecDTO> collect = Globals.characterSpec.stream()
@@ -47,6 +47,11 @@ public class PageController {
 
         model.addAttribute("char", Globals.characterSpec);
         return "artifactList";
+    }
+
+    @GetMapping(value = "/artifact_find")
+    public String artifactFind(){
+        return "artifactFind";
     }
 
 }

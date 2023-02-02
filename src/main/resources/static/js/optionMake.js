@@ -11,19 +11,41 @@ function optionMake(){
 
     const crown = ["공퍼", "체퍼", "방퍼", "원마", "치확", "치피", "치유"];
 
+    const element =["불", "물", "바람", "바위", "얼음", "번개", "풀"];
+
+    const fire = ["다이루크", "호두", "요이미야", "클레", "엠버", "향릉", "베넷", "신염", "연비", "토마"];
+
+    const water = ["모나", "야란", "타르탈리아", "아야토", "코코미", "닐루", "행추", "바바라", "캔디스"];
+
+    const wind = ["벤티", "카즈하", "진", "소", "방랑자", "설탈", "사유", "헤이조", "파루잔"];
+
+    const rock = ["종려", "알베도", "이토", "응광", "고로", "노엘", "운근"];
+
+    const ice = ["아야카", "감우", "유라", "신학", " 케이아", "로자리아", " 디오나", "중운", "레일라", "에일로이", "치치"];
+
+    const lightning = ["라이덴", "각청", "미코", "사이노", "사라", "리사", "레이저", "북두", "피슬", "시노부", "도리"];
+
+    const grass = ["나히다", "알하이탐", "타이나리", "콜레이", "요요"];
+
+    const party = ["메인 딜러", "서브 딜러", "서포터", "범용", "빙결", "격변"];
 
     const artifactName = $('#artifact_name');
     const artifactPartName = $('#artifact_part');
     const artifactPartPart = $('#main_option');
-
+    const elementType = $('#element_type');
+    const charName = $('#char_name');
+    const partyType = $('#party_type');
 
     artifactPartName.change(function (){
         partPartMake();
     })
+    elementType.change(function (){
+        charMake();
+    })
+
 
     function nameMake(){
 
-        artifactName.empty();
         for(let i = 0; i< artifactCd.length; i++){
             const op = $("<option>" + artifactCd[i] + "</option>");
             op.attr('value', i + 1);
@@ -82,8 +104,84 @@ function optionMake(){
         }
     }
 
+    function elementMake(){
+        elementType.empty();
+        for(let i = 0; i< element.length; i++){
+            const op = $("<option>" + element[i] + "</option>");
+            op.attr('value', element[i]);
+            elementType.append(op);
+        }
+    }
+
+    function charMake(){
+        charName.empty();
+        switch (elementType.val()){
+            case "불":
+                for(let i=0; i <fire.length; i++){
+                    const op = $("<option>" + fire[i] + "</option>");
+                    op.attr('value', fire[i]);
+                    charName.append(op);
+                }
+                break;
+            case "물":
+                for(let i=0; i <water.length; i++){
+                    const op = $("<option>" + water[i] + "</option>");
+                    op.attr('value', water[i]);
+                    charName.append(op);
+                }
+                break;
+            case '바람':
+                for(let i=0; i <wind.length; i++){
+                    const op = $("<option>" + wind[i] + "</option>");
+                    op.attr('value', wind[i]);
+                    charName.append(op);
+                }
+                break;
+            case '바위':
+                for(let i=0; i <rock.length; i++){
+                    const op = $("<option>" + rock[i] + "</option>");
+                    op.attr('value', rock[i]);
+                    charName.append(op);
+                }
+                break;
+            case '풀':
+                for(let i=0; i <grass.length; i++){
+                    const op = $("<option>" + grass[i] + "</option>");
+                    op.attr('value', grass[i]);
+                    charName.append(op);
+                }
+                break;
+            case '얼음':
+                for(let i=0; i <ice.length; i++){
+                    const op = $("<option>" + ice[i] + "</option>");
+                    op.attr('value', ice[i]);
+                    charName.append(op);
+                }
+                break;
+            case '번개':
+                for(let i=0; i <lightning.length; i++){
+                    const op = $("<option>" + lightning[i] + "</option>");
+                    op.attr('value', lightning[i]);
+                    charName.append(op);
+                }
+                break;
+            default:
+                console.log("속성 선택 실패");
+        }
+    }
+
+    function partyTypeMake(){
+        partyType.empty();
+        for(let i = 0; i< party.length; i++){
+            const op = $("<option>" + party[i] + "</option>");
+            op.attr('value', party[i]);
+            partyType.append(op);
+        }
+    }
+
     nameMake();
     partMake();
     partPartMake();
-
+    elementMake();
+    partyTypeMake();
 }
