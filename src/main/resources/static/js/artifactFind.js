@@ -38,13 +38,8 @@ $(document).ready(function (){
                 $('.artifact_value').hide();
                 $('.꽃').show();
             }
-            ,error:function(xhr, error, msg){
-                console.log(xhr);
-                console.log(error);
-                console.log(msg);
-                if(error === 'error'){
-                    alert('없는 유저입니다.')
-                }
+            ,error:function(xhr){
+                alert(xhr.responseJSON.message);
             }
         })
     });// searchBtn click

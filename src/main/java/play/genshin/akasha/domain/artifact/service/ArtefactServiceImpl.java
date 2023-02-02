@@ -14,6 +14,7 @@ import play.genshin.akasha.domain.user.entity.User;
 import play.genshin.akasha.domain.user.repository.UserRepository;
 import play.genshin.akasha.globals.common.Globals;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,7 @@ public class ArtefactServiceImpl implements ArtefactService{
     private final UserRepository userRepository;
 
     @Override
-    public List<ArtifactDTO> makeArtefactScore(String charName, String partyType, String userName) {
+    public List<ArtifactDTO> makeArtefactScore(String charName, String partyType, String userName, int artifactCd) {
 
         Optional<User> byId = userRepository.findById(userName);
         byId.orElseThrow(UserNotFoundException::new);
@@ -39,6 +40,8 @@ public class ArtefactServiceImpl implements ArtefactService{
                 .filter(effectiveOption -> effectiveOption.getCharName().equals(charName) && effectiveOption.getPartyType().equals(partyType))
                 .collect(Collectors.toList());
 
+        List<ArtifactDTO> result = new ArrayList<>();
+
         List<ArtifactDTO> collect = all.stream()
                 .filter(artifact -> effective.stream().anyMatch(effectiveOption -> effectiveOption.getArtifactPart().equals(artifact.getArtifactPart()) && effectiveOption.getValidMain().equals(artifact.getMainOption())))
                 .map(artifact -> new ArtifactDTO(artifact, effective.get(0)))
@@ -46,6 +49,11 @@ public class ArtefactServiceImpl implements ArtefactService{
                 .stream()
                 .sorted(Comparator.comparing(ArtifactDTO::getArtifactScore).reversed())
                 .collect(Collectors.toList());
+
+        if(!(artifactCd == 0)){
+          collect = collect.stream().filter(artifactDTO -> artifactDTO.getArtifactCd() == artifactCd).collect(Collectors.toList());
+        }
+
         if(collect.size() == 0) throw new ArtifactNotFound();
 
         return collect;

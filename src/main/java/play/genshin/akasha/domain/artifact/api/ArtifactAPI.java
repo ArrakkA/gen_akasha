@@ -47,12 +47,8 @@ public class ArtifactAPI {
             @RequestParam(value = "artifactCd")int artifactCd,
             Model model
     ){
-        List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType, userName);
+        List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType, userName, artifactCd);
         ArtifactResponseDTO responseDTO = new ArtifactResponseDTO();
-
-        if(!(artifactCd == 0)){
-            effectiveArtifact = effectiveArtifact.stream().filter(artifactDTO -> artifactDTO.getArtifactCd() == artifactCd).collect(Collectors.toList());
-        }
 
         responseDTO.getFlowers().addAll(effectiveArtifact.stream()
                 .filter(e -> e.getArtifactPart().equals("꽃"))

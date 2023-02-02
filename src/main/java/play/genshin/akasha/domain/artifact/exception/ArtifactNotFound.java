@@ -5,6 +5,6 @@ import play.genshin.akasha.globals.error.exception.BusinessException;
 
 public class ArtifactNotFound extends BusinessException {
     public ArtifactNotFound(){
-        super(ErrorCode.USER_NOT_FOUND);
+        super(ErrorCode.ARTIFACT_NOT_FOUND);
     }
 }
