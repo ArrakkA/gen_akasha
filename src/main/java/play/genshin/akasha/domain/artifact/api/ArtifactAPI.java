@@ -29,11 +29,9 @@ public class ArtifactAPI {
     public ResponseEntity artifactRegister(
             @RequestBody ArtifactRequestDTO requestDTO
             ){
-
         artefactService.resisterArtefact(requestDTO);
 
         return ResponseEntity.ok().body(HttpStatus.OK);
-
     }
 
     @ApiOperation(value = "아티팩트 리스트 확인")
@@ -45,10 +43,16 @@ public class ArtifactAPI {
             @RequestParam(value = "partyType")String partyType,
             @ApiParam(value = "유저 이름")
             @RequestParam(value = "userName")String userName,
+            @ApiParam(value = "아티팩트 코드")
+            @RequestParam(value = "artifactCd")int artifactCd,
             Model model
     ){
         List<ArtifactDTO> effectiveArtifact = artefactService.makeArtefactScore(charName, partyType, userName);
         ArtifactResponseDTO responseDTO = new ArtifactResponseDTO();
+
+        if(!(artifactCd == 0)){
+            effectiveArtifact = effectiveArtifact.stream().filter(artifactDTO -> artifactDTO.getArtifactCd() == artifactCd).collect(Collectors.toList());
+        }
 
         responseDTO.getFlowers().addAll(effectiveArtifact.stream()
                 .filter(e -> e.getArtifactPart().equals("꽃"))
@@ -70,8 +74,7 @@ public class ArtifactAPI {
                 .filter(e -> e.getArtifactPart().equals("왕관"))
                 .collect(Collectors.toList()));
 
-        model.addAttribute("artifact", responseDTO);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(responseDTO);
     }
 
 

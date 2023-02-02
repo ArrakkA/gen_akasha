@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.repository;
+package play.genshin.akasha.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Repository;

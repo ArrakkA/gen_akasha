@@ -10,8 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="/css/bootstrap.css">
+    <script src="/js/data.js"></script>
     <script src="/js/optionMake.js"></script>
     <script src="/js/newArtifact.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/newArtifact.css"/>
 </head>
 <body>
 <div class="container">
@@ -49,67 +51,81 @@
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="a_yn" value="Y">
                 <label for ="attack">공격력</label>
                 <input type="number" id="attack" placeholder="공격력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="ap_yn" value="Y">
                 <label for ="attack_percent">공격력 퍼센트</label>
                 <input type="number" id="attack_percent" placeholder="공격력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="d_yn" value="Y">
                 <label for ="defense">방어력</label>
                 <input type="number" id="defense" placeholder="방어력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="dp_yn" value="Y">
                 <label for ="defense_percent">방어력 퍼센트</label>
                 <input type="number" id="defense_percent"  placeholder="방어력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="h_yn" value="Y">
                 <label for ="health_point">체력</label>
                 <input type="number" id="health_point" placeholder="체력을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="hp_yn" value="Y">
                 <label for ="health_point_percent">체력 퍼센트</label>
                 <input type="number" id="health_point_percent" placeholder="체력 퍼센트를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="em_yn" value="Y">
                 <label for ="element_mastery">원소 마스터리</label>
                 <input type="number" id="element_mastery" placeholder="원소 마스터리를 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="ec_yn" value="Y">
                 <label for ="element_charge">원소 충전 효율</label>
                 <input type="number" id="element_charge" placeholder="원소 충전 효율을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="cp_yn" value="Y">
                 <label for ="critical_probability">치명타 확률</label>
                 <input type="number" id="critical_probability" placeholder="치명타 확률을 입력하세요"/>
             </li>
         </ul>
         <ul>
             <li>
+                <input type="checkbox" id="cd_yn" value="Y">
                 <label for ="critical_damage"> 치명타 데미지</label>
                 <input type="number" id="critical_damage" placeholder="치명타 피해를 입력하세요"/>
             </li>
         </ul>
     </div>
     <div class="btn">
+        <button id="calculationButton">계산</button>
         <button id="saveButton">등록</button>
+    </div>
+    <div class="container">
+        <div id="score"> 점수 </div>
     </div>
 </div>
 </body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gen shin akasha</title>
+  <script
+          src="https://code.jquery.com/jquery-3.6.3.js"
+          integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+          crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+  <script src="/js/data.js"></script>
+  <script src="/js/optionMake.js"></script>
+  <script src="/js/artifactFind.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/artifactFind.css"/>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>
+        <label for ="user_name">유저 이름</label>
+        <input type ="text" id="user_name" placeholder="유저 이름을 입력하세요"/>
+      </li>
+    </ul>
+    <ul>
+    <li>
+      <label for ="element_type">속성 </label>
+      <select id ="element_type">
+        <option disabled selected>속성</option>
+      </select>
+    </li>
+    </ul>
+    <ul>
+      <li>
+        <label for ="char_name">캐릭터 이름 </label>
+        <select id ="char_name">
+          <option disabled selected>캐릭터 이름</option>
+        </select>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for ="party_type">파티 타입</label>
+        <select id ="party_type">
+          <option disabled selected>파티 타입</option>
+        </select>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label for ="artifact_name">성유물 이름 </label>
+        <select id ="artifact_name">
+          <option selected value="0">선택 안함</option>
+        </select>
+      </li>
+    </ul>
+    <button id="searchBtn" > 검색</button>
+  </div>
+
+  <div class="container">
+    <div class="tabList">
+      <a class="tab" id="flower"> 꽃 </a>
+      <a class="tab" id="feather"> 깃털 </a>
+      <a class="tab" id="hourglass"> 시계 </a>
+      <a class="tab" id="holyGrail"> 성배</a>
+      <a class="tab" id="crown"> 왕관 </a>
+    </div>
+    <table>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+      <tr>
+        <th>성유물 이름</th>
+        <th>성유물 부위</th>
+        <th>공격력</th>
+        <th>공퍼</th>
+        <th>방어력</th>
+        <th>방퍼</th>
+        <th>체력</th>
+        <th>체퍼</th>
+        <th>원소 마스터리</th>
+        <th>원소 충전</th>
+        <th>치확</th>
+        <th>치피</th>
+        <th>성유물 점수</th>
+      </tr>
+      </thead>
+      <tbody id="artifact_list">
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.repository;
+package play.genshin.akasha.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

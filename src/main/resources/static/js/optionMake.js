@@ -1,29 +1,36 @@
 function optionMake(){
-
-    const artifactCd = ["검투", "악단", "왕실", "기사도", "소녀", "청록", "반암", "유성", "뇌명", "번분", "현인", "마녀",
-        "얼음", "몰락", "천암", "창백", "시메", "절연", "껍데기", "조개", "진사", "제사", "숲기", "도금", "누각", "낙원"];
-
-    const artifactPart = ["꽃", "깃털", "시계", "성배", "왕관"];
-
-    const hourGlass = ["공퍼", "체퍼", "방퍼", "원충", "원마"];
-
-    const holyGrail =  ["공퍼", "체퍼", "방퍼" , "불원피", "얼음원피", "물원피", "바위원피", "바람원피", "풀원피", "물리피해", "번개원피", "원마"];
-
-    const crown = ["공퍼", "체퍼", "방퍼", "원마", "치확", "치피", "치유"];
-
+    const artifactCd = data().artifactCd;
+    const artifactPart = data().artifactPart;
+    const hourGlass = data().hourGlass;
+    const holyGrail =  data().holyGrail;
+    const crown = data().crown;
+    const element = data().element;
+    const fire = data().fire;
+    const water = data().water;
+    const wind = data().wind;
+    const rock = data().rock;
+    const ice = data().ice;
+    const lightning = data().lightning;
+    const grass = data().grass;
+    const party = data().party;
 
     const artifactName = $('#artifact_name');
     const artifactPartName = $('#artifact_part');
     const artifactPartPart = $('#main_option');
-
+    const elementType = $('#element_type');
+    const charName = $('#char_name');
+    const partyType = $('#party_type');
 
     artifactPartName.change(function (){
         partPartMake();
     })
+    elementType.change(function (){
+        charMake();
+    })
+
 
     function nameMake(){
 
-        artifactName.empty();
         for(let i = 0; i< artifactCd.length; i++){
             const op = $("<option>" + artifactCd[i] + "</option>");
             op.attr('value', i + 1);
@@ -78,12 +85,85 @@ function optionMake(){
                 }
                 break;
             default:
-                console.log("너 재대로 안체크했어");
+        }
+    }
+
+    function elementMake(){
+        for(let i = 0; i< element.length; i++){
+            const op = $("<option>" + element[i] + "</option>");
+            op.attr('value', element[i]);
+            elementType.append(op);
+        }
+    }
+
+    function charMake(){
+        charName.empty();
+        switch (elementType.val()){
+            case "불":
+                for(let i=0; i <fire.length; i++){
+                    const op = $("<option>" + fire[i] + "</option>");
+                    op.attr('value', fire[i]);
+                    charName.append(op);
+                }
+                break;
+            case "물":
+                for(let i=0; i <water.length; i++){
+                    const op = $("<option>" + water[i] + "</option>");
+                    op.attr('value', water[i]);
+                    charName.append(op);
+                }
+                break;
+            case '바람':
+                for(let i=0; i <wind.length; i++){
+                    const op = $("<option>" + wind[i] + "</option>");
+                    op.attr('value', wind[i]);
+                    charName.append(op);
+                }
+                break;
+            case '바위':
+                for(let i=0; i <rock.length; i++){
+                    const op = $("<option>" + rock[i] + "</option>");
+                    op.attr('value', rock[i]);
+                    charName.append(op);
+                }
+                break;
+            case '풀':
+                for(let i=0; i <grass.length; i++){
+                    const op = $("<option>" + grass[i] + "</option>");
+                    op.attr('value', grass[i]);
+                    charName.append(op);
+                }
+                break;
+            case '얼음':
+                for(let i=0; i <ice.length; i++){
+                    const op = $("<option>" + ice[i] + "</option>");
+                    op.attr('value', ice[i]);
+                    charName.append(op);
+                }
+                break;
+            case '번개':
+                for(let i=0; i <lightning.length; i++){
+                    const op = $("<option>" + lightning[i] + "</option>");
+                    op.attr('value', lightning[i]);
+                    charName.append(op);
+                }
+                break;
+            default:
+                console.log("속성 선택 실패");
+        }
+    }
+
+    function partyTypeMake(){
+        for(let i = 0; i< party.length; i++){
+            const op = $("<option>" + party[i] + "</option>");
+            op.attr('value', party[i]);
+            partyType.append(op);
         }
     }
 
     nameMake();
     partMake();
     partPartMake();
-
+    elementMake();
+    partyTypeMake();
 }

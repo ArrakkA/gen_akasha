@@ -1,6 +1,5 @@
-package play.genshin.akasha.domain.character.repository;
+package play.genshin.akasha.repository;
 
-import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import play.genshin.akasha.domain.character.dto.EffectiveRequestDTO;

@@ -17,7 +17,9 @@ public enum ErrorCode {
     VERSION_NOT_FOUND(400, "C007", "버전 정보가 없습니다."),
 
     //user
-    USER_NOT_FOUND(400, "U001", "없는 유저입니다.");
+    USER_NOT_FOUND(400, "U001", "없는 유저입니다."),
+
+    ARTIFACT_NOT_FOUND(400, "A001", "아티팩트가 등록되어있지 않습니다.");
 
     private int status;
     private String code;

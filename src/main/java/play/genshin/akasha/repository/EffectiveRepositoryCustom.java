@@ -1,4 +1,4 @@
-package play.genshin.akasha.domain.character.repository;
+package play.genshin.akasha.repository;
 
 import play.genshin.akasha.domain.character.dto.EffectiveRequestDTO;
 import play.genshin.akasha.domain.character.dto.PracticeDTO;

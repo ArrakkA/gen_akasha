@@ -9,7 +9,7 @@ import play.genshin.akasha.domain.character.dto.EffectiveResponseDTO;
 import play.genshin.akasha.domain.character.dto.PracticeDTO;
 import play.genshin.akasha.domain.character.dto.registry.CharStandardRequestDTO;
 import play.genshin.akasha.domain.character.entity.EffectiveOption;
-import play.genshin.akasha.domain.character.repository.EffectiveOptionRepository;
+import play.genshin.akasha.repository.EffectiveOptionRepository;
 
 import java.util.List;
 
