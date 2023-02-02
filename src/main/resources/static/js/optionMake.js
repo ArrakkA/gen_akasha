@@ -28,9 +28,7 @@ function optionMake(){
         charMake();
     })
 
-
     function nameMake(){
-
         for(let i = 0; i< artifactCd.length; i++){
             const op = $("<option>" + artifactCd[i] + "</option>");
             op.attr('value', i + 1);
@@ -39,7 +37,6 @@ function optionMake(){
     }
 
     function partMake() {
-
         artifactPartName.empty();
         for(let i=0; i< artifactPart.length; i++){
             const op = $("<option>" + artifactPart[i] + "</option>");

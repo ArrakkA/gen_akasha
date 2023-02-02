@@ -19,7 +19,7 @@ public enum ErrorCode {
     //user
     USER_NOT_FOUND(400, "U001", "없는 유저입니다."),
 
-    ARTIFACT_NOT_FOUND(400, "A001", "아티팩트가 등록되어있지 않습니다.");
+    ARTIFACT_NOT_FOUND(400, "A001", "해당 조건의 아티팩트가 없습니다.");
 
     private int status;
     private String code;
